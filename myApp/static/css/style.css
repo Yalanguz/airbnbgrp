@@ -19,7 +19,9 @@ body {
 .head{
     z-index: 100;
 }
-
+.modal{
+  z-index: 10000 !important;
+}
 /******** giriş yap ********/
 
 .dropbtngrs{
@@ -140,7 +142,7 @@ form .secenek button {
   /******* kaydol end *******/
 
 
-  
+
 @media only screen and (max-width: 767px) {
     .search {
       width: 650px !important;
