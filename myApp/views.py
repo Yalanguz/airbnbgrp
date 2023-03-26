@@ -11,3 +11,6 @@ def anaSayfa(request):
 
 def girisYap(request):
     return render(request, 'user/girisyap.html')
+
+def Kayıt(request):
+    return render(request, 'user/kaydol.html')
