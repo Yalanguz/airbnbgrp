@@ -1,0 +1,31 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+input:focus{
+    outline: none !important;
+}
+body {
+    background-color: white;
+    margin: 0;
+  }
+  
+.headhov:hover{
+    background-color: rgb(237, 230, 230) !important;
+}
+.icounder:hover{
+    border-bottom: 2px solid #f6eded;
+}
+.head{
+    z-index: 100;
+}
+@media only screen and (max-width: 767px) {
+    .search {
+      width: 650px !important;
+    }
+  }
+  @media only screen and (max-width: 675px) {
+    .search {
+      width: 550px !important;
+    }
+  }
