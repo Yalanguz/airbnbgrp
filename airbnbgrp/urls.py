@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from myApp.views import *
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+    path('', anaSayfa, name="anaSayfa"),
+    path('girisyap/', girisYap, name="girisYap"),
+    path('kaydol/', Kayıt, name="Kayıt"),
+    path('Detay/', Detay, name="Detay"),
+    path('profil/', Profil, name="Profil"),
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
