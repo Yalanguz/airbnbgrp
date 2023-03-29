@@ -16,4 +16,5 @@ def Kayıt(request):
     return render(request, 'user/kaydol.html')
 def Detay(request):
     return render(request, 'detay.html')
-
+def Profil(request):
+    return render(request, 'user/profil.html')

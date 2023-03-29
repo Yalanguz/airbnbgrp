@@ -25,4 +25,5 @@ urlpatterns = [
     path('girisyap/', girisYap, name="girisYap"),
     path('kaydol/', Kayıt, name="Kayıt"),
     path('Detay/', Detay, name="Detay"),
+    path('profil/', Profil, name="Profil"),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
