@@ -14,3 +14,6 @@ def girisYap(request):
 
 def Kayıt(request):
     return render(request, 'user/kaydol.html')
+def Detay(request):
+    return render(request, 'detay.html')
+

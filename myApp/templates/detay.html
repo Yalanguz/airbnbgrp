@@ -1,0 +1,860 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="detay.css">
+  <title>Detay</title>
+</head>
+<style>
+  .img {
+    width: 30%;
+    height: 30%;
+    display: flex;
+    justify-content: center
+}
+.im {
+    left: 25%;
+}
+.alm.card {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.crdd.card {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.ortkaln {
+    width: 210px;
+    height: 170px;
+    background-color: rgb(250, 248, 248);
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+}
+.dhafzla {
+    border-radius: 25%;
+    -webkit-border-radius: 25%;
+    -moz-border-radius: 25%;
+    -ms-border-radius: 25%;
+    -o-border-radius: 25%;
+
+    margin-top: 2%;
+}
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center
+}
+.rating>input {
+    display: none
+}
+.rating>label {
+    position: relative;
+    width: 1em;
+    font-size: 2vw;
+    color: #FFD600;
+    cursor: pointer
+}
+.rating>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0
+}
+.rating>label:hover:before,
+.rating>label:hover~label:before {
+    opacity: 1 !important
+}
+.rating>input:checked~label:before {
+    opacity: 1
+}
+.rating:hover>input:checked~label:before {
+    opacity: 0.4
+}
+p {
+    text-align: center
+}
+h1 {
+    margin-top: 150px
+}
+p {
+    font-size: 1.2rem
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 14px
+    }
+
+    p {
+        font-size: 12px
+    }
+}
+</style>
+<body>
+  {% block body %}  
+  <div class="container xxl">
+    <div class="card mb-12 ms-5 d-flex m-2  " style="width: 60%; border:none;">
+      <div class="baslıkk">
+        <h3 class="baslık text ms-3">Bahçe Odası, plaja 50 metre mesafede, eşsiz bir mülk.
+        </h3>
+        <h6 class="baslık1 text ms-3">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" width="23px" height="23px" viewBox="0 0 32 32">
+            <path
+              d="M16 4.588l2.833 8.719H28l-7.416 5.387 2.832 8.719L16 22.023l-7.417 5.389 2.833-8.719L4 13.307h9.167L16 4.588z" />
+          </svg>4,62 ·
+          82 değerlendirme
+          ·
+          Süper Ev Sahibi
+          ·
+          (Agios Dimitrios, Yunanistan)
+        </h6>
+
+        <div class="share d-flex justify-content-end" style=" margin-top: -5%; margin-right: -40%;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 24 24" fill="none">
+            <path d="M20 13L20 18C20 19.1046 19.1046 20 18 20L6 20C4.89543 20 4 19.1046 4 18L4 13" stroke="#000000"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M16 8L12 4M12 4L8 8M12 4L12 16" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>Paylaş
+          <div class="save ms-3">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25px"
+              height="25px" viewBox="0 0 32 32" version="1.1">
+              <g id="icomoon-ignore">
+              </g>
+              <path
+                d="M21.886 5.115c3.521 0 6.376 2.855 6.376 6.376 0 1.809-0.754 3.439-1.964 4.6l-10.297 10.349-10.484-10.536c-1.1-1.146-1.778-2.699-1.778-4.413 0-3.522 2.855-6.376 6.376-6.376 2.652 0 4.925 1.62 5.886 3.924 0.961-2.304 3.234-3.924 5.886-3.924zM21.886 4.049c-2.345 0-4.499 1.089-5.886 2.884-1.386-1.795-3.54-2.884-5.886-2.884-4.104 0-7.442 3.339-7.442 7.442 0 1.928 0.737 3.758 2.075 5.152l11.253 11.309 11.053-11.108c1.46-1.402 2.275-3.308 2.275-5.352 0-4.104-3.339-7.442-7.442-7.442v0z"
+                fill="#000000">
+
+              </path>
+            </svg> Kaydet
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- Gallery -->
+      <div class="col-12 row d-flex justify-content-start m-0">
+        <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+          <img src="{% static 'img/6.webp' %}" class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
+
+          <img src="{% static 'img/1.jpg' %}" class="w-100 shadow-1-strong rounded mb-4" alt="Wintry Mountain Landscape" />
+        </div>
+
+        <div class="col-lg-3 mb-4 mb-lg-0">
+          <img src="{% static 'img/2.webp' %}" class="w-100 shadow-1-strong rounded mb-4" alt="Mountains in the Clouds" />
+
+          <img src="{% static 'img/3.webp' %}" class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
+        </div>
+
+        <div class="col-lg-3 mb-7 mb-lg-0">
+          <img src="{% static 'img/4.webp' %}" class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea" />
+
+          <img src="{% static 'img/5.webp' %}" class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park" />
+
+        </div>
+        <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+          <img src="{% static 'img/6.webp' %}" class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
+
+          <img src="{% static 'img/1.jpg' %}" class="w-100 shadow-1-strong rounded mb-4" alt="Wintry Mountain Landscape" />
+        </div>
+      </div>
+    </div>
+    <!-- Gallery -->
+    <div class="satıcı">
+      <h3 class="text-satıcı ms-5">Küçük ev · Ev sahibi: Manos</h3>
+      <h6 class="ms-5">2 misafir - 1 yatak - 1 banyo</h6>
+      <div class="col-6 d-flex justify-content-end">
+        <img src="{% static 'img/10.webp' %}" class="img-fluid rounded-pill" style=" margin-top: -10%; width: 50px;height: 50px;" />
+      </div>
+      <hr class="col-7">
+      <div class="kpı d-flex justify-content-start">
+        <div class="açklm ms-5 fw-bold">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" width="25px"
+            height="25px" viewBox="-13.22 0 122.88 122.88" version="1.1" id="Layer_1"
+            style="enable-background:new 0 0 96.43 122.88" xml:space="preserve">
+            <style type="text/css">
+              .st0 {
+                fill-rule: evenodd;
+                clip-rule: evenodd;
+              }
+            </style>
+            <g>
+              <path class="st0"
+                d="M0,115.27h4.39V1.99V0h1.99h82.93h1.99v1.99v113.28h5.14v7.61H0V115.27L0,115.27z M13.88,8.32H81.8h0.83v0.83 v104.89h4.69V3.97H8.36v111.3h4.69V9.15V8.32H13.88L13.88,8.32z M15.94,114.04H75.1l-0.38-0.15l-27.76-3.79V33.9l32.79-20.66v-2.04 H15.94V114.04L15.94,114.04z M51.7,59.66l4.23-1.21v15.81l-4.23-1.53V59.66L51.7,59.66z" />
+            </g>
+          </svg>
+        </div>
+        <div class="text-black ms-5"> Kendi kendine giriş
+          <div class="text-secondary ms-0">Kilitli kutuyla kendi kendinize giriş yapın.
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="kpı d-flex justify-content-start">
+        <div class="açklmm ms-5 fw-bold">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+            focusable="false" style="display: block; height: 24px; width: 24px; fill: currentcolor;">
+            <path
+              d="m16 17c3.8659932 0 7 3.1340068 7 7s-3.1340068 7-7 7-7-3.1340068-7-7 3.1340068-7 7-7zm0 2c-2.7614237 0-5 2.2385763-5 5s2.2385763 5 5 5 5-2.2385763 5-5-2.2385763-5-5-5zm9.6666667-18.66666667c1.0543618 0 1.9181651.81587779 1.9945142 1.85073766l.0054858.14926234v6.38196601c0 .70343383-.3690449 1.35080636-.9642646 1.71094856l-.1413082.0779058-9.6666667 4.8333334c-.5067495.2533747-1.0942474.2787122-1.6171466.0760124l-.1717078-.0760124-9.66666666-4.8333334c-.62917034-.3145851-1.04315599-.93418273-1.09908674-1.62762387l-.00648607-.16123049v-6.38196601c0-1.05436179.81587779-1.91816512 1.85073766-1.99451426l.14926234-.00548574zm0 2h-19.33333337v6.38196601l9.66666667 4.83333336 9.6666667-4.83333336z">
+            </path>
+          </svg>
+        </div>
+        <br>
+        <div class="text-black ms-5 ">
+          Manos Süper Ev Sahibi
+          <div class="text-secondary ms-0">
+            Süper Ev Sahipleri, kendilerini misafirler için mükemmel konaklamalar sunmaya adamış <br> deneyimli, yüksek
+            puanlı ev sahipleridir.
+          </div>
+        </div>
+      </div>
+      <div class="kpı d-flex justify-content-start" style="margin-top: 3%;">
+        <div class="açklmm ms-5 fw-bold">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+            focusable="false" style="display: block; height: 24px; width: 24px; fill: currentcolor;">
+            <path
+              d="m11.6667 0-.00095 1.666h8.667l.00055-1.666h2l-.00055 1.666 6.00065.00063c1.0543745 0 1.9181663.81587127 1.9945143 1.85073677l.0054857.14926323v15.91907c0 .4715696-.1664445.9258658-.4669028 1.2844692l-.1188904.1298308-8.7476886 8.7476953c-.3334303.3332526-.7723097.5367561-1.2381975.5778649l-.1758207.0077398h-12.91915c-2.68874373 0-4.88181754-2.1223321-4.99538046-4.7831124l-.00461954-.2168876v-21.66668c0-1.05436021.81587582-1.91815587 1.85073739-1.99450431l.14926261-.00548569 5.999-.00063.00095-1.666zm16.66605 11.666h-24.666v13.6673c0 1.5976581 1.24893332 2.9036593 2.82372864 2.9949072l.17627136.0050928 10.999-.0003.00095-5.6664c0-2.6887355 2.122362-4.8818171 4.7832071-4.9953804l.2168929-.0046196 5.66595-.0006zm-.081 8-5.58495.0006c-1.5977285 0-2.9037573 1.2489454-2.9950071 2.8237299l-.0050929.1762701-.00095 5.5864zm-18.586-16-5.999.00062v5.99938h24.666l.00065-5.99938-6.00065-.00062.00055 1.66733h-2l-.00055-1.66733h-8.667l.00095 1.66733h-2z">
+            </path>
+          </svg>
+        </div>
+        <br>
+        <div class="fw-bold ms-5">48 saat içinde ücretsiz iptal.
+        </div>
+      </div>
+    </div>
+    <hr class="col-7" style="margin-top: 30px;">
+    <div class="row ">
+      <div class="aircvr ms-">
+        <img src="{% static 'img/aircover.webp' %}" style="width: 140px; height: 30px; margin-left: 3%;" alt="">
+
+        <div class=" aircover text ms-4 ">
+          <p class="aircover text text-secondary d-flex justify-content-start" style="margin-top: 3%;">Her rezervasyon
+            ev sahibi iptallerine, kayıt
+            hatalarına ve girişle ilgili problemler
+            gibi diğer <br> sorunlara karşı ücretsiz olarak koruma altındadır.</p>
+          <u class="fw-bold">Daha fazla bilgi edinin</u>
+        </div>
+      </div>
+    </div>
+    <hr class="col-7">
+    <div class="açıklama ms-4">
+      <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+        focusable="false" style="display: block; height: 16px; width: 16px; fill: currentcolor;">
+        <path
+          d="M9 0a1 1 0 0 1 .993.883L10 1v5h5a1 1 0 0 1 .993.883L16 7v8a1 1 0 0 1-.883.993L15 16H7a1 1 0 0 1-.993-.883L6 15v-5H1a1 1 0 0 1-.993-.883L0 9V1A1 1 0 0 1 .883.007L1 0h8zm1.729 7l-1.393.495.233.217.13.132c.125.127.227.245.308.352l.073.103.048.073.045.077H7.308v1.309h1.207l.166.52.09.266.112.29a6.294 6.294 0 0 0 1.109 1.789c-.495.315-1.119.607-1.87.87l-.331.112-.346.108-.445.134L7.72 15l.407-.125.386-.128c1.007-.349 1.836-.752 2.486-1.214.57.405 1.277.764 2.12 1.08l.369.134.386.128.406.125.72-1.153-.445-.134-.26-.08-.345-.115c-.783-.27-1.43-.57-1.94-.895a6.3 6.3 0 0 0 1.068-1.694l.128-.32.114-.33.165-.521h1.208V8.449H11.64l-.093-.231a3.696 3.696 0 0 0-.554-.917l-.126-.149-.14-.152zm1.35 2.758l-.042.133-.076.224-.103.264A4.985 4.985 0 0 1 11 11.76a4.952 4.952 0 0 1-.743-1.127l-.115-.254-.103-.264-.076-.224-.042-.133h2.158zM9 1H1v8h5V7c0-.057.005-.113.014-.167H3.827L3.425 8H2l2.257-6h1.486l1.504 4H9V1zM5 3.411L4.253 5.6h1.502L5 3.411z">
+        </path>
+      </svg>
+      <p class="ms-4 d-flex justify-content-start" style="margin-top: -20px;">Bazı bilgiler otomatik olarak
+        çevrilmiştir.
+      </p> <u class="fw-bold">Orijinal dilde göster</u>
+      <p class="mt-3 text-secondary d-flex ">Plaja yakın özel avlusu olan güzel ve benzersiz küçük stüdyo bahçe odası.
+        <br>
+        Paylaşmayı sorun etmeyen romantik çiftler veya arkadaşlar için uygundur. <br>
+        Herkese kapımız açık.
+      </p>
+      <h5>Mekân</h5>
+      <p class="text-secondary d-flex">Stüdyonun bir yatak odası, küçük bir ocağı, buzdolabı, ekmek kızartma makinesi ve
+        su ...
+      </p>
+      <u class="fw-bold">Daha fazlasını göster</u>
+      <hr class="col-7">
+      <div class="4">
+        <h3 class="fw-bold ">Nerede uyuyacaksınız?</h3>
+        <br>
+        <div class="ortkaln ms-4 d-flex ms-4 border">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+            focusable="false"
+            style="margin-left: 15%; margin-top: 10%; display: block; height: 24px; width: 24px; fill: currentcolor;">
+            <path
+              d="M26 4a2 2 0 0 1 1.995 1.85L28 6v7.839l1.846 5.537a3 3 0 0 1 .115.468l.03.24.009.24V30h-2v-2H4v2H2v-9.675a3 3 0 0 1 .087-.717l.067-.232L4 13.836V6a2 2 0 0 1 1.697-1.977l.154-.018L6 4zm2 18H4v4h24zm-1.388-6H5.387l-1.333 4h23.891zM26 6H6v8h2v-4a2 2 0 0 1 1.85-1.995L10 8h12a2 2 0 0 1 1.995 1.85L24 10v4h2zm-11 4h-5v4h5zm7 0h-5v4h5z">
+            </path>
+          </svg>
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+            focusable="false"
+            style=" margin-top: 10%; margin-left: 5%; display: block; height: 24px; width: 24px; fill: currentcolor;">
+            <path
+              d="M3 3v4h26V3h2v18a5.002 5.002 0 0 1-3.999 4.9L27 30h-2v-4H7v4H5v-4.1a5.002 5.002 0 0 1-3.995-4.683L1 21V3zm6 6H7v15h2zm4 0h-2v15h2zm4 0h-2v15h2zm4 0h-2v15h2zm4 0h-2v15h2zM5 9H3v12c0 1.306.835 2.418 2 2.83zm24 0h-2v14.829a3.002 3.002 0 0 0 1.995-2.653L29 21z">
+            </path>
+          </svg>
+          <div class="ortak alan fw-bold" style="margin-top: 29%; margin-left: -29%;">
+            <p>Ortak Alan</p>
+            <p>1 çift kişilik yatak, 1 çocuk karyolası</p>
+          </div>
+        </div>
+      </div>
+      <hr class="col-7">
+      <div class="5">
+        <h3 class="fw-bold ">Bu mekân size neler sunuyor?</h3>
+        <div class="blm 2">
+          <div class="plj d-flex">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+              focusable="false" style="display: block; height: 24px; width: 24px; fill: currentcolor;">
+              <path
+                d="M24 27c.988 0 1.945.351 2.671 1.009.306.276.71.445 1.142.483L28 28.5v2l-.228-.006a3.96 3.96 0 0 1-2.443-1.003A1.978 1.978 0 0 0 24 29c-.502 0-.978.175-1.328.491a3.977 3.977 0 0 1-2.67 1.009 3.977 3.977 0 0 1-2.672-1.009A1.978 1.978 0 0 0 16 29c-.503 0-.98.175-1.329.491a3.978 3.978 0 0 1-2.67 1.009 3.978 3.978 0 0 1-2.672-1.008A1.978 1.978 0 0 0 8 29c-.503 0-.98.175-1.33.491a3.96 3.96 0 0 1-2.442 1.003L4 30.5v-2l.187-.008a1.953 1.953 0 0 0 1.142-.483A3.975 3.975 0 0 1 8 27c.988 0 1.945.352 2.671 1.009.35.316.826.49 1.33.491.502 0 .979-.175 1.328-.492A3.974 3.974 0 0 1 16 27c.988 0 1.945.351 2.671 1.009.35.316.826.49 1.33.491.502 0 .979-.175 1.328-.491A3.975 3.975 0 0 1 23.999 27zm0-5c.988 0 1.945.351 2.671 1.009.306.276.71.445 1.142.483L28 23.5v2l-.228-.006a3.96 3.96 0 0 1-2.443-1.003A1.978 1.978 0 0 0 24 24c-.502 0-.978.175-1.328.491a3.977 3.977 0 0 1-2.67 1.009 3.977 3.977 0 0 1-2.672-1.009A1.978 1.978 0 0 0 16 24c-.503 0-.98.175-1.329.491a3.978 3.978 0 0 1-2.67 1.009 3.978 3.978 0 0 1-2.672-1.008A1.978 1.978 0 0 0 8 24c-.503 0-.98.175-1.33.491a3.96 3.96 0 0 1-2.442 1.003L4 25.5v-2l.187-.008a1.953 1.953 0 0 0 1.142-.483A3.975 3.975 0 0 1 8 22c.988 0 1.945.352 2.671 1.009.35.316.826.49 1.33.491.502 0 .979-.175 1.328-.492A3.974 3.974 0 0 1 16 22c.988 0 1.945.351 2.671 1.009.35.316.826.49 1.33.491.502 0 .979-.175 1.328-.491A3.975 3.975 0 0 1 23.999 22zm0-5c.988 0 1.945.351 2.671 1.009.306.276.71.445 1.142.483L28 18.5v2l-.228-.006a3.96 3.96 0 0 1-2.443-1.003A1.978 1.978 0 0 0 24 19c-.502 0-.978.175-1.328.491a3.977 3.977 0 0 1-2.67 1.009 3.977 3.977 0 0 1-2.672-1.009A1.978 1.978 0 0 0 16 19c-.503 0-.98.175-1.329.491a3.978 3.978 0 0 1-2.67 1.009 3.978 3.978 0 0 1-2.672-1.008A1.978 1.978 0 0 0 8 19c-.503 0-.98.175-1.33.491a3.96 3.96 0 0 1-2.442 1.003L4 20.5v-2l.187-.008a1.953 1.953 0 0 0 1.142-.483A3.975 3.975 0 0 1 8 17c.988 0 1.945.352 2.671 1.009.35.316.826.49 1.33.491.502 0 .979-.175 1.328-.492A3.974 3.974 0 0 1 16 17c.988 0 1.945.351 2.671 1.009.35.316.826.49 1.33.491.502 0 .979-.175 1.328-.491A3.975 3.975 0 0 1 23.999 17zM16 1a9 9 0 0 1 8.76 11.072c.71.131 1.374.45 1.911.937.306.276.71.445 1.142.483L28 13.5v2l-.228-.006a3.96 3.96 0 0 1-2.443-1.003 1.951 1.951 0 0 0-1.142-.483l-.145-.007h-.084a2.001 2.001 0 0 0-1.15.378l-.137.112a3.977 3.977 0 0 1-2.67 1.009 3.977 3.977 0 0 1-2.672-1.009A1.978 1.978 0 0 0 16 14c-.503 0-.98.175-1.329.491a3.978 3.978 0 0 1-2.67 1.009 3.978 3.978 0 0 1-2.672-1.008 1.951 1.951 0 0 0-1.142-.484l-.145-.007h-.084a2.002 2.002 0 0 0-1.15.378l-.137.112a3.96 3.96 0 0 1-2.443 1.003L4 15.5v-2l.187-.008a1.953 1.953 0 0 0 1.142-.483 3.916 3.916 0 0 1 1.91-.939A9 9 0 0 1 16 1zm0 2a7 7 0 0 0-6.636 9.235c.482.168.926.429 1.307.774.35.316.826.49 1.33.491.502 0 .979-.175 1.328-.492A3.974 3.974 0 0 1 16 12c.988 0 1.945.351 2.671 1.009.35.316.826.49 1.33.491.439 0 .86-.134 1.191-.38l.137-.111c.38-.345.825-.606 1.304-.776A7 7 0 0 0 16 3z">
+              </path>
+            </svg>
+
+            <p class="ms-2">Plaj erişimi - Denize sıfır</p>
+          </div>
+
+          <div class="mtfk d-flex">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+              focusable="false" style="display: block; height: 24px; width: 24px; fill: currentcolor;">
+              <path
+                d="M26 1a5 5 0 0 1 5 5c0 6.389-1.592 13.187-4 14.693V31h-2V20.694c-2.364-1.478-3.942-8.062-3.998-14.349L21 6l.005-.217A5 5 0 0 1 26 1zm-9 0v18.118c2.317.557 4 3.01 4 5.882 0 3.27-2.183 6-5 6s-5-2.73-5-6c0-2.872 1.683-5.326 4-5.882V1zM2 1h1c4.47 0 6.934 6.365 6.999 18.505L10 21H3.999L4 31H2zm14 20c-1.602 0-3 1.748-3 4s1.398 4 3 4 3-1.748 3-4-1.398-4-3-4zM4 3.239V19h3.995l-.017-.964-.027-.949C7.673 9.157 6.235 4.623 4.224 3.364l-.12-.07zm19.005 2.585L23 6l.002.31c.045 4.321 1.031 9.133 1.999 11.39V3.17a3.002 3.002 0 0 0-1.996 2.654zm3.996-2.653v14.526C27.99 15.387 29 10.4 29 6a3.001 3.001 0 0 0-2-2.829z">
+              </path>
+            </svg>
+            <p class="ms-2">Mutfak</p>
+          </div>
+          <div class="wifi d-flex">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+              focusable="false" style="display: block; height: 24px; width: 24px; fill: currentcolor;">
+              <path
+                d="m15.9999 20.33323c2.0250459 0 3.66667 1.6416241 3.66667 3.66667s-1.6416241 3.66667-3.66667 3.66667-3.66667-1.6416241-3.66667-3.66667 1.6416241-3.66667 3.66667-3.66667zm0 2c-.9204764 0-1.66667.7461936-1.66667 1.66667s.7461936 1.66667 1.66667 1.66667 1.66667-.7461936 1.66667-1.66667-.7461936-1.66667-1.66667-1.66667zm.0001-7.33323c3.5168171 0 6.5625093 2.0171251 8.0432368 4.9575354l-1.5143264 1.5127043c-1.0142061-2.615688-3.5549814-4.4702397-6.5289104-4.4702397s-5.5147043 1.8545517-6.52891042 4.4702397l-1.51382132-1.5137072c1.48091492-2.939866 4.52631444-4.9565325 8.04273174-4.9565325zm.0001-5.3332c4.9804693 0 9.3676401 2.540213 11.9365919 6.3957185l-1.4470949 1.4473863c-2.1746764-3.5072732-6.0593053-5.8431048-10.489497-5.8431048s-8.31482064 2.3358316-10.48949703 5.8431048l-1.44709488-1.4473863c2.56895177-3.8555055 6.95612261-6.3957185 11.93659191-6.3957185zm-.0002-5.3336c6.4510616 0 12.1766693 3.10603731 15.7629187 7.9042075l-1.4304978 1.4309874c-3.2086497-4.44342277-8.4328305-7.3351949-14.3324209-7.3351949-5.8991465 0-11.12298511 2.89133703-14.33169668 7.334192l-1.43047422-1.4309849c3.58629751-4.79760153 9.31155768-7.9032071 15.7621709-7.9032071z">
+              </path>
+            </svg>
+            <p class="ms-2">Wifi</p>
+          </div>
+          <div class="otoprk d-flex">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation"
+              focusable="false" style="display: block; height: 24px; width: 24px; fill: currentcolor;">
+              <path
+                d="M26 19a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 18a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm20.693-5l.42 1.119C29.253 15.036 30 16.426 30 18v9c0 1.103-.897 2-2 2h-2c-1.103 0-2-.897-2-2v-2H8v2c0 1.103-.897 2-2 2H4c-1.103 0-2-.897-2-2v-9c0-1.575.746-2.965 1.888-3.882L4.308 13H2v-2h3v.152l1.82-4.854A2.009 2.009 0 0 1 8.693 5h14.614c.829 0 1.58.521 1.873 1.297L27 11.151V11h3v2h-2.307zM6 25H4v2h2v-2zm22 0h-2v2h2v-2zm0-2v-5c0-1.654-1.346-3-3-3H7c-1.654 0-3 1.346-3 3v5h24zm-3-10h.557l-2.25-6H8.693l-2.25 6H25zm-15 7h12v-2H10v2z">
+              </path>
+            </svg>
+            <p class="ms-2">Binada ücretsiz otopark</p>
+          </div>
+          <div class="tv d-flex">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+              focusable="false" style="display: block; height: 24px; width: 24px; fill: currentcolor;">
+              <path
+                d="M9 29v-2h2v-2H6a5 5 0 0 1-4.995-4.783L1 20V8a5 5 0 0 1 4.783-4.995L6 3h20a5 5 0 0 1 4.995 4.783L31 8v12a5 5 0 0 1-4.783 4.995L26 25h-5v2h2v2zm10-4h-6v2h6zm7-20H6a3 3 0 0 0-2.995 2.824L3 8v12a3 3 0 0 0 2.824 2.995L6 23h20a3 3 0 0 0 2.995-2.824L29 20V8a3 3 0 0 0-2.824-2.995z">
+              </path>
+            </svg>
+            <p class="ms-2">TV</p>
+          </div>
+          <div class="alarm d-flex">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+              focusable="false" style="display: block; height: 24px; width: 24px; fill: currentcolor;">
+              <path
+                d="M2.05 6.292L4 8.242V25a3 3 0 0 0 2.824 2.995L7 28h16.757l1.95 1.95c-.161.023-.325.038-.49.045L25 30H7a5 5 0 0 1-4.995-4.783L2 25V7c0-.24.017-.477.05-.708zm1.657-4l26 26-1.414 1.415-26-26 1.414-1.414zM25 2a5 5 0 0 1 4.995 4.783L30 7v18c0 .24-.017.476-.05.707L28 23.757V7a3 3 0 0 0-2.824-2.995L25 4H8.242l-1.95-1.95c.162-.023.325-.038.491-.045L7 2h18zM11.1 17a5.006 5.006 0 0 0 3.9 3.9v2.03A7.005 7.005 0 0 1 9.071 17h2.03zm5.9 4.243l1.352 1.352a6.954 6.954 0 0 1-1.351.334L17 21.243zM21.243 17l1.686.001c-.067.467-.18.919-.334 1.351L21.243 17zm-4.242-7.929A7.005 7.005 0 0 1 22.929 15H20.9A5.006 5.006 0 0 0 17 11.1l.001-2.029zm-7.596 4.577L10.757 15 9.071 15c.067-.467.18-.92.334-1.352zM15 9.071l-.001 1.686-1.35-1.352A6.954 6.954 0 0 1 15 9.07zM23 8a1 1 0 1 1 0 2 1 1 0 0 1 0-2z">
+              </path>
+            </svg>
+            <del class="ms-2">Karbonmonoksit alarmı</del>
+          </div>
+        </div>
+      </div>
+      <button
+        class="col-3  ms-3 btn btn-outline-secondary bg-light text-black border-black d-flex justify-content-evenly fw-bold"
+        style="margin-top: 2%;" type="submit">33 olanağın tümünü göster
+      </button>
+    </div>
+    <hr class="col-7">
+    <div class="6">
+      <h3 class="fw-bold ms-4">Agios Dimitrios bölgesinde 5 gece</h3>
+    </div>
+    <div class="tkvim ms-5 d-flex ">
+      <div class="_ytfarf" data-visible="true" style="margin-top: 3%; padding: 0px 13px;">
+        <div class="_ihvjx2">
+          <div>
+            <h3 tabindex="-1" class="hghzvl1 dir dir-ltr ms-5" style="margin-top: 5%;" elementtiming="LCP-target">Nisan
+              2023</h3>
+          </div>
+        </div>
+        <table class="_cvkwaj" role="presentation" style="border-spacing: 0px 2px;">
+          <tbody>
+            <tr>
+              <td class="_5zofhj1" role="button" aria-disabled="true"
+                aria-label="1, Pazartesi, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_1gg9oplx notranslate" data-testid="calendar-day-01.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">1</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true" aria-label="2, Salı, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-02.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">2</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true"
+                aria-label="3, Çarşamba, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-03.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">3</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true"
+                aria-label="4, Perşembe, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-04.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">4</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true" aria-label="5, Cuma, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-05.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">5</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true"
+                aria-label="6, Cumartesi, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-06.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">6</div>
+              </td>
+              <td class="_874f7s1" role="button" aria-disabled="true" aria-label="7, Pazar, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_1kiderev notranslate" data-testid="calendar-day-07.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">7</div>
+              </td>
+            </tr>
+            <tr>
+              <td class="_1k32kw4z" role="button" aria-disabled="true"
+                aria-label="8, Pazartesi, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_1kiderev notranslate" data-testid="calendar-day-08.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">8</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true" aria-label="9, Salı, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-09.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">9</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true"
+                aria-label="10, Çarşamba, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-10.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">10</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true"
+                aria-label="11, Perşembe, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-11.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">11</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true" aria-label="12, Cuma, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-12.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">12</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true"
+                aria-label="13, Cumartesi, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-13.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">13</div>
+              </td>
+              <td class="_874f7s1" role="button" aria-disabled="true" aria-label="14, Pazar, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_1kiderev notranslate" data-testid="calendar-day-14.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">14</div>
+              </td>
+            </tr>
+            <tr>
+              <td class="_1k32kw4z" role="button" aria-disabled="true"
+                aria-label="15, Pazartesi, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_1kiderev notranslate" data-testid="calendar-day-15.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">15</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true" aria-label="16, Salı, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-16.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">16</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true"
+                aria-label="17, Çarşamba, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-17.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">17</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true"
+                aria-label="18, Perşembe, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-18.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">18</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true" aria-label="19, Cuma, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-19.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">19</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true"
+                aria-label="20, Cumartesi, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-20.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">20</div>
+              </td>
+              <td class="_874f7s1" role="button" aria-disabled="true" aria-label="21, Pazar, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_1kiderev notranslate" data-testid="calendar-day-21.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">21</div>
+              </td>
+            </tr>
+            <tr>
+              <td class="_1k32kw4z" role="button" aria-disabled="true"
+                aria-label="22, Pazartesi, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_1kiderev notranslate" data-testid="calendar-day-22.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">22</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true" aria-label="23, Salı, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-23.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">23</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true"
+                aria-label="24, Çarşamba, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-24.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">24</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true"
+                aria-label="25, Perşembe, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-25.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">25</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true" aria-label="26, Cuma, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-26.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">26</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true"
+                aria-label="27, Cumartesi, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-27.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">27</div>
+              </td>
+              <td class="_874f7s1" role="button" aria-disabled="true" aria-label="28, Pazar, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_1kiderev notranslate" data-testid="calendar-day-28.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">28</div>
+              </td>
+            </tr>
+            <tr>
+              <td class="_1k32kw4z" role="button" aria-disabled="true"
+                aria-label="29, Pazartesi, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_1kiderev notranslate" data-testid="calendar-day-29.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">29</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true" aria-label="30, Salı, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-30.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">30</div>
+              </td>
+              <td class="_10rqnsul" role="button" aria-disabled="true"
+                aria-label="31, Çarşamba, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_1kiderev notranslate" data-testid="calendar-day-31.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">31</div>
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="_ytfarf ms-5" data-visible="true" style="margin-top: 3%; padding: 0px 13px;">
+        <div class="_ihvjx2">
+          <div>
+            <h3 tabindex="-1" class="hghzvl1 dir dir-ltr ms-5" style="margin-top: 5%;" elementtiming="LCP-target">Mayıs
+              2023</h3>
+          </div>
+        </div>
+        <table class="_cvkwaj" role="presentation" style="border-spacing: 0px 2px;">
+          <tbody>
+            <tr>
+              <td class="_5zofhj1" role="button" aria-disabled="true"
+                aria-label="1, Pazartesi, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_1gg9oplx notranslate" data-testid="calendar-day-01.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">1</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true" aria-label="2, Salı, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-02.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">2</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true"
+                aria-label="3, Çarşamba, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-03.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">3</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true"
+                aria-label="4, Perşembe, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-04.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">4</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true" aria-label="5, Cuma, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-05.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">5</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true"
+                aria-label="6, Cumartesi, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-06.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">6</div>
+              </td>
+              <td class="_874f7s1" role="button" aria-disabled="true" aria-label="7, Pazar, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_1kiderev notranslate" data-testid="calendar-day-07.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">7</div>
+              </td>
+            </tr>
+            <tr>
+              <td class="_1k32kw4z" role="button" aria-disabled="true"
+                aria-label="8, Pazartesi, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_1kiderev notranslate" data-testid="calendar-day-08.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">8</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true" aria-label="9, Salı, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-09.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">9</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true"
+                aria-label="10, Çarşamba, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-10.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">10</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true"
+                aria-label="11, Perşembe, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-11.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">11</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true" aria-label="12, Cuma, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-12.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">12</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true"
+                aria-label="13, Cumartesi, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-13.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">13</div>
+              </td>
+              <td class="_874f7s1" role="button" aria-disabled="true" aria-label="14, Pazar, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_1kiderev notranslate" data-testid="calendar-day-14.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">14</div>
+              </td>
+            </tr>
+            <tr>
+              <td class="_1k32kw4z" role="button" aria-disabled="true"
+                aria-label="15, Pazartesi, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_1kiderev notranslate" data-testid="calendar-day-15.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">15</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true" aria-label="16, Salı, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-16.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">16</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true"
+                aria-label="17, Çarşamba, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-17.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">17</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true"
+                aria-label="18, Perşembe, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-18.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">18</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true" aria-label="19, Cuma, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-19.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">19</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true"
+                aria-label="20, Cumartesi, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-20.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">20</div>
+              </td>
+              <td class="_874f7s1" role="button" aria-disabled="true" aria-label="21, Pazar, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_1kiderev notranslate" data-testid="calendar-day-21.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">21</div>
+              </td>
+            </tr>
+            <tr>
+              <td class="_1k32kw4z" role="button" aria-disabled="true"
+                aria-label="22, Pazartesi, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_1kiderev notranslate" data-testid="calendar-day-22.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">22</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true" aria-label="23, Salı, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-23.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">23</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true"
+                aria-label="24, Çarşamba, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-24.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">24</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true"
+                aria-label="25, Perşembe, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-25.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">25</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true" aria-label="26, Cuma, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-26.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">26</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true"
+                aria-label="27, Cumartesi, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-27.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">27</div>
+              </td>
+              <td class="_874f7s1" role="button" aria-disabled="true" aria-label="28, Pazar, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_1kiderev notranslate" data-testid="calendar-day-28.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">28</div>
+              </td>
+            </tr>
+            <tr>
+              <td class="_1k32kw4z" role="button" aria-disabled="true"
+                aria-label="29, Pazartesi, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_1kiderev notranslate" data-testid="calendar-day-29.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">29</div>
+              </td>
+              <td class="_1sgf68tj" role="button" aria-disabled="true" aria-label="30, Salı, Mayıs 2023. Uygun değil "
+                tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_opuqu1t notranslate" data-testid="calendar-day-30.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">30</div>
+              </td>
+              <td class="_10rqnsul" role="button" aria-disabled="true"
+                aria-label="31, Çarşamba, Mayıs 2023. Uygun değil " tabindex="-1" style="width: 42px; height: 42px;">
+                <div class="_1kiderev notranslate" data-testid="calendar-day-31.05.2023" data-is-day-blocked="true"
+                  style="width: 42px; height: 42px;">31</div>
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="_kuxo8ai">
+      <div class="_ytfarf" data-visible="false" style="padding: 0px 13px;">
+        <button
+          class="col-5  ms-5 btn btn-outline-secondary bg-light text-black border-black d-flex justify-content-evenly fw-bold"
+          style="margin-top: 0%; " type="submit">Tarihleri temizle
+        </button>
+      </div>
+    </div>
+    <hr class="col-11 ms-1">
+    <div class="row d-flex">
+      <div class="degrlendrme">
+        <h4 class="text ms-3">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" width="23px" height="23px" viewBox="0 0 32 32">
+            <path
+              d="M16 4.588l2.833 8.719H28l-7.416 5.387 2.832 8.719L16 22.023l-7.417 5.389 2.833-8.719L4 13.307h9.167L16 4.588z" />
+          </svg>4,62 ·
+          82 değerlendirme
+        </h4>
+        <div class="d-flex">
+          <p class="tmzlk" style="margin-top: 1%;">Temizlik
+          <div class="rating ms-4"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input
+              type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating"
+              value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label
+              for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+          </div>
+          </p>
+        </div>
+        <div class="d-flex">
+          <p class="tmzlk" style="margin-top: 1%;">İletişim
+          <div class="rating ms-4"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input
+              type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating"
+              value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label
+              for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+          </div>
+          </p>
+        </div>
+        <div class="d-flex">
+          <p class="tmzlk " style="margin-top: 1%;">Giriş
+          <div class="rating ms-5"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input
+              type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating"
+              value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label
+              for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+          </div>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center" style="margin-top: -14%;">
+      <p class="tmzlk" style="margin-top: 1%;">Doğruluk
+      <div class="rating ms-4"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input
+          type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating"
+          value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label
+          for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+      </div>
+      </p>
+    </div>
+
+    <div class="d-flex justify-content-center" style="margin-top: 0%;">
+      <p class="tmzlk" style="margin-top: 1%;">Konum
+      <div class="rating ms-4"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input
+          type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating"
+          value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label
+          for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+      </div>
+      </p>
+    </div>
+    <div class="d-flex justify-content-center" style="margin-top: 0%;">
+      <p class="tmzlk" style="margin-top: 1%;">Kalite/fiyat oranı
+      <div class="rating ms-4"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input
+          type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating"
+          value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label
+          for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+      </div>
+      </p>
+    </div>
+    <hr class="col-11 ms-1">
+    <!-- CARD -->
+    <div class="crdd card d-block border-secondary mb-4" style="max-width: 25rem;margin-top: -71%; margin-left: 65%;">
+      <div class="card-header bg-transparent border-secondary fw-bold" style="margin-top:7% ;"> 823 ₺ gece
+        <p class="crd text-end" style="margin-top: -7%;">4,62 ·
+          82 değerlendirme</p>
+      </div>
+      <div class=" card-body text-secondary">
+        <button class="col-12 btn btn-outline-light bg-danger d-flex justify-content-evenly fw-bold"
+          type="submit">Rezerve
+          edin</button>
+        <hr>
+        <h6 class="card-title text-black d-flex justify-content-evenly">Henüz sizden tahsilat yapılmayacak</h6>
+        <p class="card-text">
+        <p class="text-decoration-underline">
+          823 ₺ x 5 gece
+        <p class="text-decoration-underline text-end" style="margin-top: -10%;">4.113 ₺</p>
+        </p>
+        <p class="card-text">
+        <p class="text-decoration-underline">
+          Temizlik ücreti
+        <p class="text-decoration-underline text-end" style="margin-top: -10%;">308 ₺</p>
+        </p>
+        </p>
+        <p class="card-text">
+        <p class="text-decoration-underline">
+          Airbnb hizmet bedeli
+        <p class="text-decoration-underline text-end" style="margin-top: -10%;">737 ₺</p>
+        </p>
+      </div>
+
+      <div class="card-footer bg-transparent border-secondary text-black fw-bold">Vergiler hariç toplam
+        <p class="text-end" style="margin-top: -7%;">5.158 ₺</p>
+      </div>
+    </div>
+    <!-- <hr class="col-7"> -->
+    <div class="alm card border-secondary mb-4" style="max-width: 25rem;margin-top: -1%; margin-left: 65%;">
+      <div class="card-header bg-transparent border-secondary fw-bold" style="margin-top:-0% ;"> Bu nadir bulunan
+        bir
+        fırsat.Manos adlı ev sahibinin Airbnb'deki yeri genellikle rezerve edilmiş olur.
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30px" width="30px"
+          style="margin-left: 65%; margin-top: -21%;" version="1.1" id="Layer_1" viewBox="0 0 512 512"
+          xml:space="preserve">
+          <path style="fill:#FFDCE1;"
+            d="M508.483,140.691l-6.144,9.12L286.406,470.334l-11.765,17.469c-0.014,0.028-0.028,0.041-0.041,0.055  l-0.193,0.303c-0.069,0.083-0.138,0.152-0.193,0.234c-0.372,0.551-0.785,1.075-1.212,1.584c-0.152,0.179-0.317,0.358-0.482,0.537  c-0.358,0.4-0.744,0.785-1.157,1.171c-0.193,0.179-0.386,0.372-0.592,0.551c-0.413,0.358-0.868,0.689-1.309,1.019  c-0.193,0.138-0.372,0.303-0.565,0.427l-0.014,0.014c-0.592,0.4-1.199,0.758-1.819,1.088c-0.165,0.083-0.317,0.179-0.482,0.248  c-0.661,0.344-1.336,0.647-2.011,0.909c-0.041,0.014-0.069,0.014-0.096,0.028c-0.73,0.276-1.447,0.496-2.19,0.675  c-0.055,0.014-0.124,0.028-0.179,0.055c-0.758,0.179-1.502,0.303-2.259,0.4c-0.096,0.014-0.193,0.028-0.303,0.041  c-0.744,0.083-1.502,0.138-2.259,0.138c-0.014,0-0.014,0-0.014,0c-0.014,0-0.014,0-0.028,0c-0.413,0-0.827-0.014-1.24-0.055  c-0.331-0.014-0.675-0.041-1.006-0.083c-0.11-0.014-0.207-0.028-0.303-0.041c-0.744-0.083-1.502-0.22-2.232-0.4  c-0.069-0.014-0.138-0.041-0.207-0.055c-0.179-0.041-0.372-0.096-0.551-0.152c-0.551-0.138-1.088-0.317-1.626-0.51  c-0.028-0.014-0.055-0.028-0.083-0.028c-0.675-0.262-1.336-0.565-1.998-0.895l-0.496-0.248c-0.606-0.331-1.199-0.675-1.791-1.061  c0-0.014,0-0.014-0.014-0.014c-0.22-0.152-0.413-0.331-0.634-0.482c-0.427-0.317-0.84-0.62-1.24-0.964  c-0.207-0.179-0.413-0.372-0.62-0.565c-0.4-0.372-0.771-0.758-1.143-1.143c-0.165-0.179-0.317-0.358-0.482-0.551  c-0.427-0.496-0.827-1.019-1.212-1.557c-0.055-0.083-0.124-0.152-0.193-0.248l-0.193-0.289c-0.014-0.014-0.028-0.028-0.041-0.055  l-13.708-20.141L9.898,149.811l-5.166-7.591c-6.723-8.114-6.282-20.169,1.323-27.773l93.68-93.68  c4.147-4.147,9.616-6.144,15.058-6.034c0.138,0,0.276-0.014,0.413-0.014h282.418c6.172,0,11.696,2.714,15.485,7.012l7.426,7.426  l79.325,79.325l5.69,5.69C512.753,120.99,514.2,132.191,508.483,140.691z" />
+          <path style="fill:#F4CED2;"
+            d="M508.483,140.691L274.641,487.803c-0.014,0.028-0.028,0.041-0.041,0.055l-0.193,0.303  c-0.069,0.083-0.138,0.152-0.193,0.234c-0.372,0.551-0.785,1.075-1.212,1.584c-0.152,0.179-0.317,0.358-0.482,0.537  c-0.358,0.4-0.744,0.785-1.157,1.171c-0.193,0.179-0.386,0.372-0.592,0.551c-0.413,0.358-0.868,0.689-1.309,1.019  c-0.193,0.138-0.372,0.303-0.565,0.427l-0.014,0.014c-0.592,0.4-1.199,0.758-1.818,1.088c-0.165,0.083-0.317,0.179-0.482,0.248  c-0.661,0.344-1.336,0.647-2.011,0.909c-0.041,0.014-0.069,0.014-0.096,0.028c-0.73,0.276-1.447,0.496-2.19,0.675  c-0.055,0.014-0.124,0.028-0.179,0.055c-0.758,0.179-1.502,0.303-2.259,0.4c-0.096,0.014-0.193,0.028-0.303,0.041  c-0.744,0.083-1.502,0.138-2.259,0.138c-0.014,0-0.014,0-0.014,0c-0.014,0-0.014,0-0.028,0c-0.413,0-0.827-0.014-1.24-0.055V14.719  h141.622c6.172,0,11.696,2.714,15.485,7.012l92.44,92.44C512.753,120.99,514.2,132.191,508.483,140.691z" />
+          <path style="fill:#F5888E;"
+            d="M505.548,114.171l-5.69-5.69H393.297l27.236-79.325l-7.426-7.426  c-3.789-4.298-9.313-7.012-15.485-7.012h-15.829l-26.465,77.066l-70.66-70.673l6.392-6.392h-71.238l6.392,6.392l-70.012,70.012  L129.96,14.719h-14.755c-0.138,0-0.276,0.014-0.413,0.014c-5.442-0.11-10.911,1.887-15.058,6.034l-8.486,8.486l27.209,79.229H12.02  l-5.965,5.965c-7.605,7.605-8.045,19.659-1.323,27.773l5.166,7.591h122.748l101.381,295.23l-7.797,22.704l13.708,20.141  c0.014,0.028,0.028,0.041,0.041,0.055l0.193,0.289c0.069,0.096,0.138,0.165,0.193,0.248c0.386,0.537,0.785,1.061,1.212,1.557  c0.165,0.193,0.317,0.372,0.482,0.551c0.372,0.386,0.744,0.771,1.143,1.143c0.207,0.193,0.413,0.386,0.62,0.565  c0.4,0.344,0.813,0.647,1.24,0.964c0.22,0.152,0.413,0.331,0.634,0.482c0.014,0,0.014,0,0.014,0.014  c0.592,0.386,1.185,0.73,1.791,1.061l0.496,0.248c0.661,0.331,1.323,0.634,1.998,0.895c0.028,0,0.055,0.014,0.083,0.028  c0.537,0.193,1.075,0.372,1.626,0.51c0.179,0.055,0.372,0.11,0.551,0.152c0.069,0.014,0.138,0.041,0.207,0.055  c0.73,0.179,1.488,0.317,2.232,0.4c0.096,0.014,0.193,0.028,0.303,0.041c0.331,0.041,0.675,0.069,1.006,0.083  c0.413,0.041,0.827,0.055,1.24,0.055c0.014,0,0.014,0,0.028,0c0,0,0,0,0.014,0c0.758,0,1.515-0.055,2.259-0.138  c0.11-0.014,0.207-0.028,0.303-0.041c0.758-0.096,1.502-0.22,2.259-0.4c0.055-0.028,0.124-0.041,0.179-0.055  c0.744-0.179,1.46-0.4,2.19-0.675c0.028-0.014,0.055-0.014,0.096-0.028c0.675-0.262,1.35-0.565,2.011-0.909  c0.165-0.069,0.317-0.165,0.482-0.248c0.62-0.331,1.226-0.689,1.819-1.088l0.014-0.014c0.193-0.124,0.372-0.289,0.565-0.427  c0.441-0.331,0.895-0.661,1.309-1.019c0.207-0.179,0.4-0.372,0.592-0.551c0.413-0.386,0.799-0.771,1.157-1.171  c0.165-0.179,0.331-0.358,0.482-0.537c0.427-0.51,0.84-1.033,1.212-1.584c0.055-0.083,0.124-0.152,0.193-0.234l0.193-0.303  c0.014-0.014,0.028-0.028,0.041-0.055l11.765-17.469l-8.679-25.294l101.381-295.23h123.231l6.144-9.12  C514.2,132.191,512.753,120.99,505.548,114.171z M255.45,50.345l0.551,0.551l57.586,57.586H197.299L255.45,50.345z M256.001,381.063  l-0.124,0.358l-79.532-231.61h159.049L256.001,381.063z" />
+          <path style="fill:#F76976;"
+            d="M508.483,140.691l-6.144,9.12H379.108l-101.381,295.23l8.679,25.294l-11.765,17.469  c-0.014,0.028-0.028,0.041-0.041,0.055l-0.193,0.303c-0.069,0.083-0.138,0.152-0.193,0.234c-0.372,0.551-0.785,1.075-1.212,1.584  c-0.152,0.179-0.317,0.358-0.482,0.537c-0.358,0.4-0.744,0.785-1.157,1.171c-0.193,0.179-0.386,0.372-0.592,0.551  c-0.413,0.358-0.868,0.689-1.309,1.019c-0.193,0.138-0.372,0.303-0.565,0.427l-0.014,0.014c-0.592,0.4-1.199,0.758-1.819,1.088  c-0.165,0.083-0.317,0.179-0.482,0.248c-0.661,0.344-1.336,0.647-2.011,0.909c-0.041,0.014-0.069,0.014-0.096,0.028  c-0.73,0.276-1.447,0.496-2.19,0.675c-0.055,0.014-0.124,0.028-0.179,0.055c-0.758,0.179-1.502,0.303-2.259,0.4  c-0.096,0.014-0.193,0.028-0.303,0.041c-0.744,0.083-1.502,0.138-2.259,0.138c-0.014,0-0.014,0-0.014,0c-0.014,0-0.014,0-0.028,0  c-0.413,0-0.827-0.014-1.24-0.055V381.063l79.394-231.252h-79.394v-41.329h57.586l-57.586-57.586V14.719h35.061l-6.392,6.392  l70.66,70.673l26.465-77.066h15.829c6.172,0,11.696,2.714,15.485,7.012l7.426,7.426l-27.236,79.325h106.561l5.69,5.69  C512.753,120.99,514.2,132.191,508.483,140.691z" />
+        </svg>
+      </div>
+    </div>
+  </div>
+  {% endblock body %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+</html>
