@@ -25,27 +25,39 @@
             </div>
             
             <div class="modal-body" style="overflow:scroll;">
-              <form>
-        <h5>Airbnb'ye Hoş Geldiniz</h5> <br>      
+              <form action="{% url 'Kayit' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
       <div class="dropdown">
-          <input class="dropbtn dropdown-toggle" data-bs-toggle="dropdown" placeholder="Ülke/Bölge" style="border: 0.2px solid grey; border-radius: 10px;">
-          <div class="dropdown-content">
-            <a href="#">Türkmenistan(+993)</a>
-            <a href="#">Türkiye(+90)</a>
-            <a href="#">Uganda(+256)</a>
-            <a href="#">Ukrayna(+380)</a>
-            <a href="#">Umman(+968)</a>
-            <a href="#">Uruguay(+598)</a>
-            <a href="#">Ürdün(+962)</a>
-          </div>
+          
         </div>
-                  <div class="mb-3" style="display: block;" >
-                      <input class="dropbtn" style="border: 0.2px solid grey; border-radius: 10px;"placeholder="Telefon Numarası">
-                  </div> 
+                    {% if messages %}
+                    <div class="alert alert-warning alert-danger fade show p-1 mt-1" role="alert" style="margin-left: 32px;height: 60px;" >
+                        <strong>{{ messages }}</strong> 
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endif %}
+                    <div class="mb-3" style="display: block;" >
+                        <input class="dropbtn" name="name" style="border: 0.2px solid grey; border-radius: 10px;"placeholder="Adınız...">
+                    </div> 
+                    <div class="mb-3" style="display: block;" >
+                        <input class="dropbtn" name="surname" style="border: 0.2px solid grey; border-radius: 10px;"placeholder="Soyadınız...">
+                    </div>
+                    <div class="mb-3" style="display: block;" >
+                        <input class="dropbtn" name="email" style="border: 0.2px solid grey; border-radius: 10px;"placeholder="Eposta adresi...">
+                    </div>
+                    <div class="mb-3" style="display: block;" >
+                        <input class="dropbtn" name="username" style="border: 0.2px solid grey; border-radius: 10px;"placeholder="Kullanı adı giriniz...">
+                    </div>
+                    <div class="mb-3" style="display: block;" >
+                        <input class="dropbtn" type="password" name="password1" style="border: 0.2px solid grey; border-radius: 10px;"placeholder="Şifre...">
+                    </div>
+                    <div class="mb-3" style="display: block;" >
+                        <input class="dropbtn" type="password" name="password2" style="border: 0.2px solid grey; border-radius: 10px;"placeholder="Şifreyi tekrar giriniz...">
+                    </div>
                   <p style="font-size: small;">Numaranızı doğrulamak için sizi arayacağız veya kısa bir mesaj göndereceğiz.Standart mesaj ve veri ücretleri uygulanır. <a href="" style="color: black; font-weight: 650;" >Gizlilik Politikası</a></p>  
-                  <button type="button" >Devam et</button>
-                  <br><br>
-                  <div class='line-titles'><span>veya</span></div>
+                  <button type="submit" class="next" name="register" >Devam et</button>
+                  
+                  <div class='line-titles mb-1'><span>veya</span></div>
                   <div class="secenek">
                   <button type="button" ><svg width="20px" height="20px" style="margin-right: 120px;" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                       <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -77,7 +89,7 @@
 
  <!--***** -giriş yap  modal  *****-->
 
- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-md ">
       <div class="modal-content">
         <div class="modal-header">
@@ -92,16 +104,18 @@
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM11.9999 6C9.79077 6 7.99991 7.79086 7.99991 10C7.99991 12.2091 9.79077 14 11.9999 14C14.209 14 15.9999 12.2091 15.9999 10C15.9999 7.79086 14.209 6 11.9999 6ZM17.1115 15.9974C17.8693 16.4854 17.8323 17.5491 17.1422 18.1288C15.7517 19.2966 13.9581 20 12.0001 20C10.0551 20 8.27215 19.3059 6.88556 18.1518C6.18931 17.5723 6.15242 16.5032 6.91351 16.012C7.15044 15.8591 7.40846 15.7251 7.68849 15.6097C8.81516 15.1452 10.2542 15 12 15C13.7546 15 15.2018 15.1359 16.3314 15.5954C16.6136 15.7102 16.8734 15.8441 17.1115 15.9974Z" fill="grey"/>
                 </svg>
             </div>
-          <form>
+            
+            <form action="{% url 'girisYap' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
           <p style="text-align: center;">  <svg width="20px" height="17px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M3.29289 5.29289C3.47386 5.11193 3.72386 5 4 5H20C20.2761 5 20.5261 5.11193 20.7071 5.29289M3.29289 5.29289C3.11193 5.47386 3 5.72386 3 6V18C3 18.5523 3.44772 19 4 19H20C20.5523 19 21 18.5523 21 18V6C21 5.72386 20.8881 5.47386 20.7071 5.29289M3.29289 5.29289L10.5858 12.5857C11.3668 13.3668 12.6332 13.3668 13.4142 12.5857L20.7071 5.29289" stroke="black" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round"/>
               </svg> se********09@gmail.com</p>
               <div class="mb-3" >
-                  <input class="dropbtn" placeholder="E-posta">
-                  <input class="dropbtn" type="password" placeholder="Parola">
+                  <input class="dropbtn" name="username" placeholder="Kullanıcı adı giriniz">
+                  <input class="dropbtn" name="password" type="password" placeholder="Parola">
               </div>   
               <br>
-              <button type="button" >Oturum açın</button>
+              <button type="submit" name="login">Oturum açın</button>
           <br><br>
               <p>
                   <a href="#" style="color: black; ">
@@ -184,7 +198,7 @@
 
                           <!-- GirişYapModalBtn start-->
 
-                          <li type="button" class="" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever=""><a class="dropdown-item" href="#">Oturum Açın</a>
+                          <li type="button" class="" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever=""><a class="dropdown-item" href="#">Oturum Açın</a>
                           </li>
                           <!-- GirişYapModalBtn End-->
                           <li><a class="dropdown-item" href="{% url 'Profil' %}">Profil</a></li>
