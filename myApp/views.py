@@ -5,11 +5,25 @@ from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.models import User
 from django.db.models import Q #search
 # Create your views here.
+def Detail(request,id):
+    houses = House.objects.get(id=id)
+    userprofil = userProfil.objects.get(user = request.user.id)
+    
+    
+    context={
+        "houses":houses,
+        "userprofil":userprofil,
+    }
+    return render(request,'detail.html',context)
 
 def anaSayfa(request):
+    houses=House.objects.all()
     
+    context={
+        'houses':houses,
+    }
             
-    return render(request, 'anasayfa.html')
+    return render(request, 'anasayfa.html', context)
 
 def girisYap(request):
     if 'login' in request.POST:
