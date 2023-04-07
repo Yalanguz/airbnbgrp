@@ -10,8 +10,6 @@ from django.db.models import Q #search
 def Detay(request,id):
     house = House.objects.get(id=id)
     
-    
-    
     context={
         "house":house,
         
@@ -51,8 +49,6 @@ def Kayit(request):
             user.save()
         print(request.POST)
     return redirect('anaSayfa')
-
-
 
 def Profil(request):
     return render(request, 'user/profil.html')
