@@ -24,15 +24,15 @@
 
           <div class="card mt-4 me-3 border-0" style="height: 500px !important;">
             <div id="carouselExampleControls1{{ house.id }}" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                          <a href="{% url 'Detay' %}" style="text-decoration: none; color: #222222;">
-                          <div class="carousel-item active ">
+              <div class="carousel-inner rounded-4 ">
+                          <a href="{% url 'Detay' house.id %}" style="text-decoration: none; color: #222222;">
+                          <div class="carousel-item active rounded-4  ">
                             <img src="{{ house.foto_1.url }}" class="d-block w-100 rounded-4 " alt="..." style="height: 256px;">
                           </div>
-                          <div class="carousel-item">
+                          <div class="carousel-item rounded-4 ">
                             <img src="{{ house.foto_2.url }}" class="d-block w-100 rounded-4" alt="..." style="height: 256px;">
                           </div>
-                          <div class="carousel-item">
+                          <div class="carousel-item rounded-4 ">
                             <img src="{{ house.foto_3.url }}" class="d-block w-100 rounded-4" alt="..." style="height: 256px;">
                           </div>
                         </a>
@@ -56,6 +56,9 @@
         </div>
       {% endfor %}
             
+
+        
+
         <div class="col col-sm-6 col-md-4 col-lg-3 g-4">
             <a href="{% url 'Detay' %}" style="text-decoration: none; color: #222222;">
                 <div class="card mt-4 me-3 border-0" style="height: 500px !important;">
@@ -421,6 +424,7 @@
                   </div>
             </a>
         </div>
+>>>>>>> 6c5fdc87095e4ffb22dc401a1f37894d0e620cbe
     </div>
 </div>
 {% endblock body %}

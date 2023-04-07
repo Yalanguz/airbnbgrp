@@ -5,16 +5,17 @@ from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.models import User
 from django.db.models import Q #search
 # Create your views here.
-def Detail(request,id):
-    houses = House.objects.get(id=id)
-    userprofil = userProfil.objects.get(user = request.user.id)
-    
+
+
+def Detay(request,id):
+    house = House.objects.get(id=id)
     
     context={
-        "houses":houses,
-        "userprofil":userprofil,
+        "house":house,
+        
     }
-    return render(request,'detail.html',context)
+    
+    return render(request, 'detay.html',context)
 
 def anaSayfa(request):
     houses=House.objects.all()
@@ -49,8 +50,5 @@ def Kayit(request):
         print(request.POST)
     return redirect('anaSayfa')
 
-
-def Detay(request):
-    return render(request, 'detay.html')
 def Profil(request):
     return render(request, 'user/profil.html')
