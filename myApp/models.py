@@ -16,6 +16,7 @@ class userProfil(models.Model):
     
 class Category(models.Model):
     name =models.CharField(("Kategori İsmi"), max_length=50)
+    cimage = models.FileField(("kategori ico"), upload_to=None, max_length=100,null=True)
 
 
     def __str__(self) -> str:
@@ -31,7 +32,7 @@ class House(models.Model):
     foto_2=models.FileField(("Ev Foto2"), upload_to=None, max_length=100)
     foto_3=models.FileField(("Ev Foto3"), upload_to=None, max_length=100)
     günlük_ücret=models.FloatField(("Günlük Ücret"))
-    kategori=models.ForeignKey(Category, verbose_name=("Kategori"), on_delete=models.CASCADE)
+    kategori=models.ForeignKey(Category, verbose_name=("Kategori"), on_delete=models.CASCADE, null=True)
     
     def __str__(self):
         return self.ev_ismi

@@ -17,11 +17,14 @@ def Detay(request,id):
     
     return render(request, 'detay.html',context)
 
-def anaSayfa(request):
-    houses=House.objects.all()
-    
+def anaSayfa(request,id='all'):
+    houses = House.objects.all()
+    categories = Category.objects.all()
+    if id.isnumeric():        
+        houses = House.objects.filter(kategori=id)
     context={
         'houses':houses,
+        "categories" : categories,
     }
             
     return render(request, 'anasayfa.html', context)
