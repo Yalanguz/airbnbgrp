@@ -150,10 +150,10 @@
         <div class="col-12 border-bottom d-flex align-items-center p-5 " style="height: 80px;">
             <div class="row align-items-center">
                 <div class="col-1 d-none d-md-flex fs-1 fw-bold " style="color: rgb(255, 56, 92);margin-right: 10px;">
-                    <a href="{% url 'anaSayfa' %}" style="text-decoration: none; color: rgb(255, 56, 92);"><i class="fa-brands fa-airbnb logoair"></i></a>
+                    <a href="{% url 'anaSayfa' 'all' %}" style="text-decoration: none; color: rgb(255, 56, 92);"><i class="fa-brands fa-airbnb logoair"></i></a>
                 </div>
                 <div class="col-1 d-none d-lg-flex fs-3 fw-bold ms-3" style="color: rgb(255, 56, 92);">
-                    <a href="{% url 'anaSayfa' %}" style="text-decoration: none; color: rgb(255, 56, 92);">airbnb</a>
+                    <a href="{% url 'anaSayfa' 'all' %}" style="text-decoration: none; color: rgb(255, 56, 92);">airbnb</a>
                 </div>
             </div>
                 <div class="col-6 col-sm-10 col-lg-6 ">
@@ -178,12 +178,12 @@
                 <div class="col-1 d-none d-xl-flex d-flex " >
                     <div class="btn-group" >
                         <button type="button" style="height: 40px;border-radius: 20px;border: 0.1px solid grey;" class="btn btn-white " data-bs-toggle="dropdown" aria-expanded="false">
-                            <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="40%" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M2 6C2 5.44772 2.44772 5 3 5H21C21.5523 5 22 5.44772 22 6C22 6.55228 21.5523 7 21 7H3C2.44772 7 2 6.55228 2 6Z" fill="#000000"/>
                                 <path d="M2 12C2 11.4477 2.44772 11 3 11H21C21.5523 11 22 11.4477 22 12C22 12.5523 21.5523 13 21 13H3C2.44772 13 2 12.5523 2 12Z" fill="#000000"/>
                                 <path d="M3 17C2.44772 17 2 17.4477 2 18C2 18.5523 2.44772 19 3 19H21C21.5523 19 22 18.5523 22 18C22 17.4477 21.5523 17 21 17H3Z" fill="#000000"/>
                                 </svg>
-                                <svg width="30px" height="32px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="40%" height="32px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect width="24" height="24" fill="white"/>
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM11.9999 6C9.79077 6 7.99991 7.79086 7.99991 10C7.99991 12.2091 9.79077 14 11.9999 14C14.209 14 15.9999 12.2091 15.9999 10C15.9999 7.79086 14.209 6 11.9999 6ZM17.1115 15.9974C17.8693 16.4854 17.8323 17.5491 17.1422 18.1288C15.7517 19.2966 13.9581 20 12.0001 20C10.0551 20 8.27215 19.3059 6.88556 18.1518C6.18931 17.5723 6.15242 16.5032 6.91351 16.012C7.15044 15.8591 7.40846 15.7251 7.68849 15.6097C8.81516 15.1452 10.2542 15 12 15C13.7546 15 15.2018 15.1359 16.3314 15.5954C16.6136 15.7102 16.8734 15.8441 17.1115 15.9974Z" fill="#323232"/>
                                     </svg>
@@ -213,92 +213,23 @@
         </div>
 
     </div>
-    <div class="row mt-4">
-       <div class="col-12 d-flex align-items-end justify-content-sm-around " style="height: 78px;padding-bottom: 15px !important;">
-            <div class="col-1 d-none d-lg-block fs-4">
-                <a href="#" style="text-decoration: none; color: #222222;"><div class="icodiv d-flex justify-content-center">
-                    <i class="fa-solid fa-igloo"></i>
+    <div class="row mt-4 pe-2">
+        
+        
+        <div class="col-12  d-flex align-items-end justify-content-between" style="height: 78px;padding-bottom: 15px !important;">
+        {% for c in categories %}
+        
+            
+                
+
+            <div class="p-3">
+                <a href="{% url 'anaSayfa' c.id %}" style="text-decoration: none; color: #222222;"><div class="icodiv d-flex justify-content-center">
+                    <img src="{{ c.cimage.url }}" alt="" style="width: 25px;">
                 </div>
-                <span class="d-flex justify-content-center mt-2 icounder" style="font-size: 12px;">Küçük evler</span>
+                <span class="d-flex justify-content-center mt-2 icounder" style="font-size: 12px;">{{ c.name }}</span>
                 </a>
             </div>
-            <div class="col-1 d-none d-lg-block  d-block  fs-4">
-                <a href="#" style="text-decoration: none; color: #222222;"><div class="icodiv d-flex justify-content-center">
-                    <i class="fa-solid fa-images"></i>
-                </div>
-                <span class="d-flex justify-content-center mt-2 icounder" style="font-size: 12px;">Manzaralar</span>
-                </a>
-            </div>
-            <div class="col-1 d-none d-lg-block  d-block fs-4">
-                <a href="#" style="text-decoration: none; color: #222222;"><div class="icodiv d-flex justify-content-center">
-                    <i class="fa-solid fa-water"></i>
-                </div>
-                <span class="d-flex justify-content-center mt-2 icounder" style="font-size: 12px;">Denize Sıfır</span>
-                </a>
-            </div>
-            <div class="col-1 d-none d-lg-block  d-block fs-4">
-                <a href="#" style="text-decoration: none; color: #222222;"><div class="icodiv d-flex justify-content-center">
-                    <i class="fa-solid fa-city"></i>
-                </div>
-                <span class="d-flex justify-content-center mt-2 icounder" style="font-size: 12px;">Simge kentler</span>
-                </a>
-            </div>
-            <div class="col-1 d-none d-lg-block d-block fs-4">
-                <a href="#" style="text-decoration: none; color: #222222;"><div class="icodiv d-flex justify-content-center">
-                    <i class="fa-solid fa-snowflake"></i>
-                </div>
-                <span class="d-flex justify-content-center mt-2 icounder" style="font-size: 12px;">Kuzey kutbu</span>
-                </a>
-            </div>
-            <div class="col-1 d-none d-lg-block d-block fs-4">
-                <a href="#" style="text-decoration: none; color: #222222;"><div class="icodiv d-flex justify-content-center">
-                    <i class="fa-sharp fa-solid fa-person-booth"></i>
-                </div>
-                <span class="d-flex justify-content-center mt-2 icounder" style="font-size: 12px;">Özel odalar</span>
-                </a>
-            </div>
-            <div class="col-1  d-block fs-4">
-                <a href="#" style="text-decoration: none; color: #222222;"><div class="icodiv d-flex justify-content-center">
-                    <i class="fa-solid fa-sailboat"></i>
-                </div>
-                <span class="d-flex justify-content-center mt-2 icounder" style="font-size: 12px;">Tekneler</span>
-                </a>
-            </div>
-            <div class="col-1 d-block fs-4">
-                <a href="#" style="text-decoration: none; color: #222222;"><div class="icodiv d-flex justify-content-center">
-                    <i class="fa-solid fa-fire"></i>
-                </div>
-                <span class="d-flex justify-content-center mt-2 icounder" style="font-size: 12px;">Popüler</span>
-                </a>
-            </div>
-            <div class="col-1 d-block fs-4">
-                <a href="#" style="text-decoration: none; color: #222222;"><div class="icodiv d-flex justify-content-center">
-                    <i class="fa-brands fa-fort-awesome"></i>
-                </div>
-                <span class="d-flex justify-content-center mt-2 icounder" style="font-size: 12px;">Şatolar</span>
-                </a>
-            </div>
-            <div class="col-1 d-none d-lg-block  d-block fs-4">
-                <a href="#" style="text-decoration: none; color: #222222;"><div class="icodiv d-flex justify-content-center">
-                    <i class="fa-solid fa-meteor"></i>
-                </div>
-                <span class="d-flex justify-content-center mt-2 icounder" style="font-size: 12px;">Olağanüstü</span>
-                </a>
-            </div>
-            <div class="col-1 d-block fs-4">
-                <a href="#" style="text-decoration: none; color: #222222;"><div class="icodiv d-flex justify-content-center">
-                    <i class="fa-solid fa-campground"></i>
-                </div>
-                <span class="d-flex justify-content-center mt-2 icounder" style="font-size: 12px;">Kamp</span>
-                </a>
-            </div>
-            <div class="col-1 d-block fs-4">
-                <a href="#" style="text-decoration: none; color: #222222;"><div class="icodiv d-flex justify-content-center">
-                    <i class="fa-solid fa-table-tennis-paddle-ball"></i>
-                </div>
-                <span class="d-flex justify-content-center mt-2 icounder" style="font-size: 12px;">Oyun</span>
-                </a>
-            </div>
+        {% endfor %}
                 
         </div>
     </div>
